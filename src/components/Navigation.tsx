@@ -36,7 +36,7 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl shadow-blue-500/10 border-b border-white/10' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ const Navigation = () => {
             className="text-2xl font-bold text-white cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            PE
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">PE</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ const Navigation = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium"
               >
                 {item.label}
               </motion.button>
@@ -79,13 +79,13 @@ const Navigation = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-slate-800 rounded-lg mb-4 p-4"
+            className="md:hidden bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-md rounded-lg mb-4 p-4 border border-white/10 shadow-xl"
           >
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-2 text-gray-300 hover:text-white transition-colors duration-200"
+                className="block w-full text-left py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium"
               >
                 {item.label}
               </button>

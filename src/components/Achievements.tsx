@@ -66,11 +66,11 @@ const Achievements = () => {
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Key{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
                 Achievements
               </span>
             </h2>
-            <p className="text-xl text-gray-400">Milestones and recognitions</p>
+            <p className="text-xl text-gray-300">Milestones and recognitions</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -79,23 +79,23 @@ const Achievements = () => {
                 key={achievement.title}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 text-center group"
+                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300 text-center group shadow-xl hover:shadow-2xl hover:shadow-blue-500/20"
               >
                 <div
-                  className={`p-4 bg-gradient-to-r ${achievement.color} rounded-lg text-white w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  className={`p-4 bg-gradient-to-r ${achievement.color} rounded-lg text-white w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                 >
                   {achievement.icon}
                 </div>
 
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                   {achievement.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
                   {achievement.description}
                 </p>
 
-                <div className="inline-block px-3 py-1 bg-white/10 text-gray-300 rounded-full text-xs font-medium">
+                <div className="inline-block px-3 py-1 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-xs font-medium shadow-md">
                   {achievement.year}
                 </div>
               </motion.div>
@@ -103,7 +103,7 @@ const Achievements = () => {
           </div>
 
           <motion.div variants={itemVariants} className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
+            <div className="bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl p-8 backdrop-blur-sm border border-white/20 shadow-xl shadow-purple-500/10">
               <h3 className="text-2xl font-semibold text-white mb-4">
                 Continuous Learning & Growth
               </h3>

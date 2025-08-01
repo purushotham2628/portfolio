@@ -70,9 +70,9 @@ const Skills = () => {
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Skills</span>
+              Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Skills</span>
             </h2>
-            <p className="text-xl text-gray-400">Technologies I work with</p>
+            <p className="text-xl text-gray-300">Technologies I work with</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,10 +81,10 @@ const Skills = () => {
                 key={category.title}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
+                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-3 bg-gradient-to-r ${category.color} rounded-lg text-white`}>
+                  <div className={`p-3 bg-gradient-to-r ${category.color} rounded-lg text-white shadow-lg`}>
                     {category.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-white">{category.title}</h3>
@@ -95,7 +95,7 @@ const Skills = () => {
                     <motion.span
                       key={skill}
                       whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-white/10 text-gray-300 rounded-full text-sm font-medium hover:bg-white/20 transition-colors duration-200 cursor-default"
+                      className="px-3 py-1 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-sm font-medium hover:from-white/25 hover:to-white/20 hover:text-white transition-all duration-200 cursor-default shadow-md hover:shadow-lg"
                     >
                       {skill}
                     </motion.span>

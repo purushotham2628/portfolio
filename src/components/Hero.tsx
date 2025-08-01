@@ -47,9 +47,9 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-teal-900/20" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/30 to-pink-900/30" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float-delayed" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -61,16 +61,17 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 animate-gradient">
                 Purushotham E
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-300 font-light">
+            <p className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400 font-light">
               Full Stack Developer
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-12 max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Passionate about creating innovative solutions through modern web technologies,
               machine learning, and scalable applications. Committed to delivering high-quality,
               user-centric digital experiences that drive business growth and technological advancement.
@@ -89,7 +90,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 transition-all duration-300 ${link.color}`}
+                className={`flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm text-white rounded-full border border-white/30 transition-all duration-300 hover:border-white/50 hover:shadow-lg hover:shadow-blue-500/25 ${link.color}`}
               >
                 {link.icon}
                 <span className="font-medium">{link.label}</span>
@@ -104,7 +105,7 @@ const Hero = () => {
               download="Purushotham_E_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-teal-500 to-blue-500 text-white font-semibold rounded-full shadow-lg border border-white/20 hover:from-teal-600 hover:to-blue-600 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white font-semibold rounded-full shadow-xl shadow-blue-500/25 border border-white/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105"
             >
               <Download size={18} />
               Download Resume
