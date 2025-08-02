@@ -71,14 +71,16 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-blue-500/20"
+                whileHover={{ scale: 1.02, y: -12 }}
+                className="group glass rounded-2xl p-6 hover:border-white/30 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 relative overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
                 <div className="mb-6">
-                  <div className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <div className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                     {project.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">
                     {project.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-6">
@@ -94,7 +96,7 @@ const Projects = () => {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-sm font-medium shadow-md"
+                        className="px-3 py-1 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-sm font-medium shadow-md group-hover:from-white/25 group-hover:to-white/20 group-hover:text-white transition-all duration-300"
                       >
                         {tech}
                       </span>
@@ -102,15 +104,15 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4 border-t border-white/10">
+                <div className="flex gap-4 pt-4 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
                   {project.github && (
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-400 rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all duration-200 shadow-md hover:shadow-lg"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-400 rounded-lg hover:from-blue-500/30 hover:to-cyan-500/30 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/25"
                     >
                       <Github size={16} />
                       <span className="text-sm font-medium">Code</span>
@@ -121,14 +123,15 @@ const Projects = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-pink-400 rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-200 shadow-md hover:shadow-lg"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-pink-400 rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-purple-500/25"
                     >
                       <ExternalLink size={16} />
                       <span className="text-sm font-medium">Demo</span>
                     </motion.a>
                   )}
+                </div>
                 </div>
               </motion.div>
             ))}

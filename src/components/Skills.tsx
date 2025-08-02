@@ -80,22 +80,22 @@ const Skills = () => {
               <motion.div
                 key={category.title}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20"
+                whileHover={{ scale: 1.02, y: -8 }}
+                className="glass rounded-2xl p-6 hover:border-white/30 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 group"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-3 bg-gradient-to-r ${category.color} rounded-lg text-white shadow-lg`}>
+                  <div className={`p-3 bg-gradient-to-r ${category.color} rounded-lg text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">{category.title}</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <motion.span
                       key={skill}
-                      whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-sm font-medium hover:from-white/25 hover:to-white/20 hover:text-white transition-all duration-200 cursor-default shadow-md hover:shadow-lg"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="px-3 py-2 bg-gradient-to-r from-white/15 to-white/10 text-gray-200 rounded-full text-sm font-medium hover:from-white/25 hover:to-white/20 hover:text-white transition-all duration-300 cursor-default shadow-md hover:shadow-lg hover:shadow-blue-500/25"
                     >
                       {skill}
                     </motion.span>

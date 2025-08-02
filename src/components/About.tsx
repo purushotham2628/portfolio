@@ -38,9 +38,9 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={itemVariants} className="space-y-8">
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl shadow-blue-500/10">
+              <div className="glass rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-lg shadow-lg">
+                  <div className="p-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <GraduationCap className="text-cyan-300" size={28} />
                   </div>
                   <h3 className="text-2xl font-semibold text-white">Education</h3>
@@ -58,9 +58,9 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-xl shadow-purple-500/10">
+              <div className="glass rounded-2xl p-8 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 group">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-lg shadow-lg">
+                  <div className="p-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Target className="text-pink-300" size={28} />
                   </div>
                   <h3 className="text-2xl font-semibold text-white">Career Objective</h3>
@@ -75,11 +75,13 @@ const About = () => {
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
-              <div className="bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl p-8 backdrop-blur-sm border border-white/20 shadow-xl shadow-indigo-500/10">
+              <div className="glass rounded-2xl p-8 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
                 <h3 className="text-2xl font-semibold text-white mb-6">Professional Journey</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-blue-400/50"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-blue-400/50 group-hover:scale-125 transition-transform duration-300"></div>
                     <div>
                       <h4 className="text-lg font-medium text-white">Full Stack Development</h4>
                       <p className="text-gray-300">
@@ -89,7 +91,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-purple-400/50"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-purple-400/50 group-hover:scale-125 transition-transform duration-300"></div>
                     <div>
                       <h4 className="text-lg font-medium text-white">Problem Solving</h4>
                       <p className="text-gray-300">
@@ -99,7 +101,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-orange-400/50"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-2 flex-shrink-0 shadow-lg shadow-orange-400/50 group-hover:scale-125 transition-transform duration-300"></div>
                     <div>
                       <h4 className="text-lg font-medium text-white">Innovation</h4>
                       <p className="text-gray-300">
@@ -108,6 +110,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </motion.div>
