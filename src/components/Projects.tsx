@@ -31,6 +31,25 @@ const Projects = () => {
       github: 'https://github.com/purushotham2628/air-quality',
       demo: 'https://air-quality-bengaluru.onrender.com/',
     },
+    {
+  icon: <Users size={32} />,
+  title: 'AI Health Symptom Checker & Doctor Finder',
+  description:
+    'A full-stack app that analyzes symptoms using Google Gemini AI, locates nearby doctors with Google Maps, and supports user authentication with Firebase.',
+  techStack: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'Firebase',
+    'Google Gemini AI',
+    'Google Maps API',
+  ],
+  color: 'from-purple-500 to-indigo-500',
+  github: 'https://github.com/purushotham2628/ai-symptom-analyzer',
+  demo: '', // add deployment link if you host it
+},
+
   ];
 
   const containerVariants = {
