@@ -2,8 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Calendar, BarChart3, Dumbbell, Users } from 'lucide-react';
 
-const Projects = () => {
-  const projects = [
+interface Project {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  techStack: string[];
+  color: string;
+  github: string;
+  demo?: string;
+}
+
+const Projects: React.FC = () => {
+  const projects: Project[] = [
     {
       icon: <Calendar size={32} />,
       title: 'Salon Appointment Booking System',
@@ -22,7 +32,7 @@ const Projects = () => {
       techStack: ['React.js', 'Node.js', 'Express.js', 'JavaScript', 'HTML', 'CSS', 'MySQL'],
       color: 'from-blue-500 to-cyan-500',
       github: 'https://github.com/purushotham2628/smart-queue-management',
-      demo: '', // Add demo link here if deployed
+      demo: '',
     },
     {
       icon: <BarChart3 size={32} />,
@@ -50,7 +60,7 @@ const Projects = () => {
         'Node-cron',
       ],
       color: 'from-orange-500 to-yellow-500',
-      github: 'https://github.com/purushotham2628/fitness-diet-tracker', // update if repo exists
+      github: 'https://github.com/purushotham2628/fitness-diet-tracker',
       demo: 'https://fitness-diet-app.onrender.com/',
     },
     {
@@ -61,7 +71,7 @@ const Projects = () => {
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Firebase', 'Google Gemini AI', 'Google Maps API'],
       color: 'from-purple-500 to-indigo-500',
       github: 'https://github.com/purushotham2628/ai-symptom-analyzer',
-      demo: '', // add once hosted
+      demo: '',
     },
   ];
 
@@ -85,15 +95,13 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Projects</span>
+              Featured{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+                Projects
+              </span>
             </h2>
             <p className="text-xl text-gray-300">Some of my notable work</p>
           </motion.div>
@@ -107,18 +115,17 @@ const Projects = () => {
                 className="group glass rounded-2xl p-6 hover:border-white/30 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 relative overflow-hidden"
               >
                 <div className="mb-6">
-                  <div className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     {project.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    {project.description}
-                  </p>
+                  <p className="text-gray-400 leading-relaxed mb-6">{project.description}</p>
                 </div>
 
-                {/* Tech Stack */}
                 <div className="mb-6">
                   <h4 className="text-sm font-medium text-gray-300 mb-3 uppercase tracking-wide">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
@@ -160,7 +167,6 @@ const Projects = () => {
                       <span className="text-sm font-medium">Demo</span>
                     </motion.a>
                   )}
-                </div>
                 </div>
               </motion.div>
             ))}
