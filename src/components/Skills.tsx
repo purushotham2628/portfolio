@@ -7,13 +7,13 @@ const Skills = () => {
     {
       icon: <Code size={32} />,
       title: 'Languages',
-      skills: ['Java', 'Python', 'C', 'JavaScript', 'Go'],
+      skills: ['Java', 'Python', 'C', 'JavaScript'],
       color: 'from-blue-500 to-blue-600',
     },
     {
       icon: <Globe size={32} />,
       title: 'Web Technologies',
-      skills: ['HTML', 'CSS', 'Node.js', 'Express.js', 'React.js', 'Next.js'],
+      skills: ['HTML', 'CSS', 'Node.js', 'Express.js', 'React.js', 'REST APIs'],
       color: 'from-green-500 to-green-600',
     },
     {
@@ -31,7 +31,7 @@ const Skills = () => {
     {
       icon: <Settings size={32} />,
       title: 'DevOps',
-      skills: ['Jenkins', 'Git Bash', 'Azure DevOps'],
+      skills: ['Jenkins', 'Git Bash'],
       color: 'from-orange-500 to-orange-600',
     },
     {
@@ -39,6 +39,12 @@ const Skills = () => {
       title: 'Tools & Data',
       skills: ['Git', 'VS Code', 'GitHub', 'Eclipse', 'Jupyter Notebook', 'Excel', 'Tableau', 'Power BI'],
       color: 'from-teal-500 to-teal-600',
+    },
+    {
+      icon: <Wrench size={32} />,
+      title: 'Cloud (Basic)',
+      skills: ['AWS EC2', 'AWS S3'],
+      color: 'from-yellow-500 to-yellow-600',
     },
   ];
 
@@ -76,7 +82,7 @@ const Skills = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, index) => (
+            {skillCategories.map((category) => (
               <motion.div
                 key={category.title}
                 variants={itemVariants}

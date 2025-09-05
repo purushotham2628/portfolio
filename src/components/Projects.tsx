@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Calendar, Users, BarChart3 } from 'lucide-react';
+import { ExternalLink, Github, Calendar, BarChart3, Dumbbell, Users } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       icon: <Calendar size={32} />,
       title: 'Salon Appointment Booking System',
-      description: 'A full-stack salon appointment system with admin dashboard, real-time validations, SQLite backend, and email confirmations.',
+      description:
+        'A salon management app with real-time validations, overlap prevention, Nodemailer confirmations, responsive UI, and feedback collection. Deployed online for seamless user experience.',
       techStack: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'SQLite', 'Nodemailer'],
       color: 'from-pink-500 to-rose-500',
       github: 'https://github.com/purushotham2628/salon-appointment-system',
@@ -16,7 +17,8 @@ const Projects = () => {
     {
       icon: <Users size={32} />,
       title: 'Smart Queue Management System',
-      description: 'A real-time queue tracking app built with React and Node.js, allowing users to generate and monitor tokens through a live dashboard.',
+      description:
+        'A real-time queue tracking app built with React and Node.js, allowing users to generate and monitor tokens through a live dashboard.',
       techStack: ['React.js', 'Node.js', 'Express.js', 'JavaScript', 'HTML', 'CSS', 'MySQL'],
       color: 'from-blue-500 to-cyan-500',
       github: 'https://github.com/purushotham2628/smart-queue-management',
@@ -25,31 +27,42 @@ const Projects = () => {
     {
       icon: <BarChart3 size={32} />,
       title: 'Air Quality Monitoring Dashboard',
-      description: 'Real-time dashboard for Bengaluru’s air quality with weather tracking and health recommendations. Powered by OpenWeatherMap API.',
+      description:
+        'A real-time dashboard for Bengaluru’s air quality and weather using OpenWeatherMap API with live trends, health suggestions, and interactive Chart.js visualizations. Fully responsive and deployed online.',
       techStack: ['Node.js', 'Express.js', 'JavaScript', 'HTML', 'CSS', 'Chart.js'],
       color: 'from-green-500 to-emerald-500',
       github: 'https://github.com/purushotham2628/air-quality',
       demo: 'https://air-quality-bengaluru.onrender.com/',
     },
     {
-  icon: <Users size={32} />,
-  title: 'AI Health Symptom Checker & Doctor Finder',
-  description:
-    'A full-stack app that analyzes symptoms using Google Gemini AI, locates nearby doctors with Google Maps, and supports user authentication with Firebase.',
-  techStack: [
-    'React.js',
-    'Node.js',
-    'Express.js',
-    'MongoDB',
-    'Firebase',
-    'Google Gemini AI',
-    'Google Maps API',
-  ],
-  color: 'from-purple-500 to-indigo-500',
-  github: 'https://github.com/purushotham2628/ai-symptom-analyzer',
-  demo: '', // add deployment link if you host it
-},
-
+      icon: <Dumbbell size={32} />,
+      title: 'Fitness & Diet Tracker',
+      description:
+        'A full-stack fitness and diet tracker with session-based authentication, Nutritionix API for meals, weekly progress emails (Node-cron), and interactive workout/diet charts for tracking.',
+      techStack: [
+        'React.js',
+        'Node.js',
+        'Express.js',
+        'SQLite',
+        'Nutritionix API',
+        'Nodemailer',
+        'Recharts',
+        'Node-cron',
+      ],
+      color: 'from-orange-500 to-yellow-500',
+      github: 'https://github.com/purushotham2628/fitness-diet-tracker', // update if repo exists
+      demo: 'https://fitness-diet-app.onrender.com/',
+    },
+    {
+      icon: <Users size={32} />,
+      title: 'AI Health Symptom Checker & Doctor Finder (Ongoing)',
+      description:
+        'A full-stack app leveraging Google Gemini AI for symptom checks, Google Maps API for nearby doctors, and Firebase Auth. Stores queries in MongoDB Atlas and is being developed for future expansion into personal health tracking.',
+      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Firebase', 'Google Gemini AI', 'Google Maps API'],
+      color: 'from-purple-500 to-indigo-500',
+      github: 'https://github.com/purushotham2628/ai-symptom-analyzer',
+      demo: '', // add once hosted
+    },
   ];
 
   const containerVariants = {
@@ -93,24 +106,21 @@ const Projects = () => {
                 whileHover={{ scale: 1.02, y: -12 }}
                 className="group glass rounded-2xl p-6 hover:border-white/30 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10">
                 <div className="mb-6">
-                  <div className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                  <div className={`p-4 bg-gradient-to-r ${project.color} rounded-lg text-white w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     {project.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {project.description}
                   </p>
                 </div>
 
+                {/* Tech Stack */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-300 mb-3 uppercase tracking-wide">
-                    Tech Stack
-                  </h4>
+                  <h4 className="text-sm font-medium text-gray-300 mb-3 uppercase tracking-wide">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech) => (
                       <span
@@ -123,7 +133,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
+                <div className="flex gap-4 pt-4 border-t border-white/10">
                   {project.github && (
                     <motion.a
                       href={project.github}
